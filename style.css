@@ -1,6 +1,82 @@
-
-body{
-    background-color: black;
-    color: white;
+body {
+  background-color: black;
+  color: white;
 }
 
+.calculator {
+  border-radius: 5px;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(65, 65, 65);
+  width: fit-content;
+  height: auto;
+}
+
+.digitBtn {
+  cursor: pointer;
+  font-size: xx-large;
+  font-weight: bolder;
+  background-color: bisque;
+  padding: 4px 12px;
+  border-radius: 50%;
+  margin: 10px;
+  outline: none;
+  border: none;
+}
+.optBtn {
+  cursor: pointer;
+  font-size: xx-large;
+  font-weight: bolder;
+  background-color: bisque;
+  padding: 4px 12px;
+  border-radius: 50%;
+  margin: 10px;
+  outline: none;
+  border: none;
+}
+
+input {
+  margin-bottom: 15px;
+  background-color: rgb(60, 60, 60);
+  color: white;
+  width: 240px;
+  height: 70px;
+  font-size: 300%;
+  font-weight: bolder;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.equal {
+  background-color: blue;
+  color: white;
+}
+.clear {
+  background-color: red;
+  color: white;
+  border-radius: 30px;
+  padding: 4px 43px;
+}
+
+.zero {
+  border-radius: 30px;
+  padding: 4px 44px;
+}
+
+.dot {
+  padding: 4px 17px;
+}
+
+p {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  color: black;
+}
+
+button:active {
+  background-color: rgb(80, 80, 80);
+}
