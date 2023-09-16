@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Digital+7"
+      rel="stylesheet"
+    />
+
+    <title>Calculator Lite</title>
+
+    <style>
+      .calculator {
+        border-radius: 5px;
+        padding: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        width: fit-content;
+        height: auto;
+      }
+
+      .digitBtn {
+        cursor: pointer;
+        font-size: xx-large;
+        font-weight: bolder;
+        background-color: bisque;
+        padding: 4px 12px;
+        border-radius: 50%;
+        margin: 10px;
+        outline: none;
+        border: none;
+      }
+      .optBtn {
+        cursor: pointer;
+        font-size: xx-large;
+        font-weight: bolder;
+        background-color: bisque;
+        padding: 4px 12px;
+        border-radius: 50%;
+        margin: 10px;
+        outline: none;
+        border: none;
+      }
+
+      #display {
+        /* font-family: 'Digital-7', sans-serif; */
+        font-family: monospace;
+        margin-bottom: 15px;
+        background-color: rgb(140, 140, 140);
+        color: black;
+        width: 240px;
+        height: 70px;
+        font-size: 300%;
+        font-weight: bolder;
+        padding: 10px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <h1 id="display">8</h1>
+
+      <button class="optBtn">s</button>
+      <button class="optBtn">c</button>
+      <button class="optBtn">x</button>
+      <button class="optBtn">/</button><br />
+
+      <button onclick="digit()" class="digitBtn">7</button>
+      <button class="digitBtn">8</button>
+      <button class="digitBtn">9</button>
+      <button class="optBtn">x</button><br />
+
+      <button class="digitBtn">4</button>
+      <button class="digitBtn">5</button>
+      <button class="digitBtn">6</button>
+      <button class="optBtn">-</button><br />
+
+      <button class="digitBtn">1</button>
+      <button class="digitBtn">2</button>
+      <button class="digitBtn">3</button>
+      <button class="optBtn">+</button><br />
+
+      <button class="digitBtn">0</button>
+      <button class="digitBtn">0</button>
+      <button class="digitBtn">0</button>
+      <button class="optBtn">=</button><br />
+    </div>
+    <!-- <h1>Calculator</h1> -->
+    <script>
+      function digit() {
+        var ank = document.getElementsByClassName("digitBtn").innerText;
+        var rAnk = Number(ank);
+        var item = document.getElementById("display").innerText;
+        var data = Number(item);
+        if (data == 0) {
+          document.getElementById("display").innerHTML = rAnk;
+        } else {
+          var newData = data * 10 + rAnk;
+          document.getElementById("display").innerHTML = newData;
+        }
+      }
+    </script>
+  </body>
+</html>
