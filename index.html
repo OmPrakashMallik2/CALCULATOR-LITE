@@ -47,9 +47,7 @@
         border: none;
       }
 
-      #display {
-        /* font-family: 'Digital-7', sans-serif; */
-        font-family: monospace;
+      input {
         margin-bottom: 15px;
         background-color: rgb(140, 140, 140);
         color: black;
@@ -60,49 +58,69 @@
         padding: 10px;
         border-radius: 4px;
       }
+
+      .equal {
+        background-color: blue;
+        color: white;
+      }
+      .clear {
+        background-color: red;
+        color: white;
+      }
+
     </style>
   </head>
   <body>
     <div class="calculator">
-      <h1 id="display">8</h1>
+      <div class="display">
+        <!-- <h1 id="result"></h1> -->
+        <input type="text" id="result"/>
+      </div>
 
-      <button class="optBtn">s</button>
-      <button class="optBtn">c</button>
+      <button onclick="clearDisplay()" class="digitBtn clear">c</button>
+
       <button class="optBtn">x</button>
-      <button class="optBtn">/</button><br />
+      <button class="optBtn">x</button>
+      <button onclick="appendToDisplay('/')" class="optBtn">/</button><br />
 
-      <button onclick="digit()" class="digitBtn">7</button>
-      <button class="digitBtn">8</button>
-      <button class="digitBtn">9</button>
-      <button class="optBtn">x</button><br />
+      <button onclick="appendToDisplay('7')" class="digitBtn">7</button>
+      <button onclick="appendToDisplay('8')" class="digitBtn">8</button>
+      <button onclick="appendToDisplay('9')" class="digitBtn">9</button>
+      <button onclick="appendToDisplay('*')" class="optBtn">x</button><br />
 
-      <button class="digitBtn">4</button>
-      <button class="digitBtn">5</button>
-      <button class="digitBtn">6</button>
-      <button class="optBtn">-</button><br />
+      <button onclick="appendToDisplay('4')" class="digitBtn">4</button>
+      <button onclick="appendToDisplay('5')" class="digitBtn">5</button>
+      <button onclick="appendToDisplay('6')" class="digitBtn">6</button>
+      <button onclick="appendToDisplay('-')" class="optBtn">-</button><br />
 
-      <button class="digitBtn">1</button>
-      <button class="digitBtn">2</button>
-      <button class="digitBtn">3</button>
-      <button class="optBtn">+</button><br />
-
+      <button onclick="appendToDisplay('1')" class="digitBtn">1</button>
+      <button onclick="appendToDisplay('2')" class="digitBtn">2</button>
+      <button onclick="appendToDisplay('3')" class="digitBtn">3</button>
+      <button onclick="appendToDisplay('+')" class="optBtn">+</button><br>
+      
       <button class="digitBtn">0</button>
+      <button onclick="appendToDisplay('.')" class="optBtn">.</button>
       <button class="digitBtn">0</button>
-      <button class="digitBtn">0</button>
-      <button class="optBtn">=</button><br />
+
+      <button onclick="calculate()" class="optBtn equal">=</button><br />
     </div>
     <!-- <h1>Calculator</h1> -->
     <script>
-      function digit() {
-        var ank = document.getElementsByClassName("digitBtn").innerText;
-        var rAnk = Number(ank);
-        var item = document.getElementById("display").innerText;
-        var data = Number(item);
-        if (data == 0) {
-          document.getElementById("display").innerHTML = rAnk;
-        } else {
-          var newData = data * 10 + rAnk;
-          document.getElementById("display").innerHTML = newData;
+      let display = document.getElementById("result");
+
+      function appendToDisplay(value) {
+        display.value += value;
+      }
+
+      function clearDisplay() {
+        display.value = "";
+      }
+
+      function calculate() {
+        try {
+          display.value = eval(display.value);
+        } catch (error) {
+          display.value = "Error";
         }
       }
     </script>
