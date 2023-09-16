@@ -66,22 +66,41 @@
       .clear {
         background-color: red;
         color: white;
+        border-radius: 30px;
+        padding: 4px 43px;
       }
 
+      .zero {
+        border-radius: 30px;
+        padding: 4px 44px;
+      }
+
+      .dot {
+        padding: 4px 17px;
+      }
+
+      p{
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        color: black;
+      }
+
+      button:active{
+        background-color: rgb(80, 80, 80);
+      }
     </style>
   </head>
   <body>
     <div class="calculator">
-      
       <div class="display">
-        <input type="text" id="result"/>
+        <input type="text" id="result" />
       </div>
 
       <button onclick="clearDisplay()" class="digitBtn clear">c</button>
 
-      <button class="optBtn">x</button>
-      <button class="optBtn">x</button>
-      <button onclick="appendToDisplay('/')" class="optBtn">/</button><br />
+      <button onclick="calculate()" class="optBtn">=</button>
+      <button onclick="appendToDisplay('/')" class="optBtn dot">/</button><br />
 
       <button onclick="appendToDisplay('7')" class="digitBtn">7</button>
       <button onclick="appendToDisplay('8')" class="digitBtn">8</button>
@@ -91,20 +110,19 @@
       <button onclick="appendToDisplay('4')" class="digitBtn">4</button>
       <button onclick="appendToDisplay('5')" class="digitBtn">5</button>
       <button onclick="appendToDisplay('6')" class="digitBtn">6</button>
-      <button onclick="appendToDisplay('-')" class="optBtn">-</button><br />
+      <button onclick="appendToDisplay('-')" class="optBtn dot">-</button><br />
 
       <button onclick="appendToDisplay('1')" class="digitBtn">1</button>
       <button onclick="appendToDisplay('2')" class="digitBtn">2</button>
       <button onclick="appendToDisplay('3')" class="digitBtn">3</button>
-      <button onclick="appendToDisplay('+')" class="optBtn">+</button><br>
-      
-      <button class="digitBtn">0</button>
-      <button onclick="appendToDisplay('.')" class="optBtn">.</button>
-      <button class="digitBtn">0</button>
+      <button onclick="appendToDisplay('+')" class="optBtn">+</button><br />
+
+      <button onclick="appendToDisplay('0')" class="digitBtn zero">0</button>
+      <button onclick="appendToDisplay('.')" class="optBtn dot">.</button>
 
       <button onclick="calculate()" class="optBtn equal">=</button><br />
+      <p>By : Om Prakash Mallik</p>
     </div>
-    <!-- <h1>Calculator</h1> -->
     <script>
       let display = document.getElementById("result");
 
